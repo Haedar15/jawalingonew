@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JawaLingo - Login</title>
+</head>
+<body>
+    <center>
+        <br><br><br>
+        
+        <h1><font size="8"><b>JawaLingo</b></font></h1>
+        
+        <br><br><br>
+        
+        <form onsubmit="handleLogin(event)">
+            <table>
+                <tr>
+                    <td>
+                        <input type="email" placeholder="Email" name="email" size="40" style="height:40px; font-size:16px; padding:10px; border-radius:20px; border:2px solid #ccc;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" placeholder="Password" name="password" size="40" style="height:40px; font-size:16px; padding:10px; border-radius:20px; border:2px solid #ccc;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><br><br></td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <button type="submit" style="width:300px; height:50px; font-size:20px; background-color:#d3d3d3; border:none; border-radius:25px;">
+                            <b>MASUK</b>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+        <br><br><br><br>
+        
+        <p><font size="3" color="#999">Belum punya akun?</font></p>
+        
+        <br>
+        
+        <button onclick="goToRegister()" style="width:300px; height:50px; font-size:20px; background-color:#d3d3d3; border:none; border-radius:25px;">
+            <b>DAFTAR</b>
+        </button>
+    </center>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = event.target.email.value;
+            const password = event.target.password.value;
+            
+            if (email && password) {
+                alert('Login berhasil!\nEmail: ' + email);
+                // Di sini bisa redirect ke halaman utama
+                // window.location.href = 'dashboard.html';
+            } else {
+                alert('Mohon isi email dan password!');
+            }
+        }
+        
+        function goToRegister() {
+            alert('Menuju halaman pendaftaran...');
+            // Di sini bisa redirect ke halaman daftar
+            // window.location.href = 'register.html';
+        }
+    </script>
+</body>
+</html>

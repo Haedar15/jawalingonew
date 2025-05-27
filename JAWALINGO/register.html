@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JawaLingo - Daftar</title>
+</head>
+<body>
+    <center>
+        <br><br><br>
+        
+        <h1><font size="8"><b>DAFTAR</b></font></h1>
+        
+        <br><br><br>
+        
+        <form onsubmit="handleRegister(event)">
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Nama" name="nama" size="40" style="height:40px; font-size:16px; padding:10px; border-radius:20px; border:2px solid #ccc;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="email" placeholder="Email" name="email" size="40" style="height:40px; font-size:16px; padding:10px; border-radius:20px; border:2px solid #ccc;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" placeholder="Password" name="password" size="40" style="height:40px; font-size:16px; padding:10px; border-radius:20px; border:2px solid #ccc;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" placeholder="Ulang Password" name="confirmPassword" size="40" style="height:40px; font-size:16px; padding:10px; border-radius:20px; border:2px solid #ccc;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><br><br></td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <button type="submit" style="width:300px; height:50px; font-size:20px; background-color:#d3d3d3; border:none; border-radius:25px;">
+                            <b>DAFTAR</b>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+
+    <script>
+        function handleRegister(event) {
+            event.preventDefault();
+            const nama = event.target.nama.value;
+            const email = event.target.email.value;
+            const password = event.target.password.value;
+            const confirmPassword = event.target.confirmPassword.value;
+            
+            if (!nama || !email || !password || !confirmPassword) {
+                alert('Mohon isi semua field!');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Password dan Ulang Password tidak sama!');
+                return;
+            }
+            
+            if (password.length < 6) {
+                alert('Password minimal 6 karakter!');
+                return;
+            }
+            
+            alert('Pendaftaran berhasil!\nNama: ' + nama + '\nEmail: ' + email);
+            // Di sini bisa redirect ke halaman login atau dashboard
+            // window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
